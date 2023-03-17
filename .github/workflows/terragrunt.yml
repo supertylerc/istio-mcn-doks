@@ -29,6 +29,7 @@ jobs:
         with:
           tf_actions_version: ${{ env.tf_version }}
           tg_actions_version: ${{ env.tg_version }}
+          tf_actions_binary: 'terragrunt run-all'
           tf_actions_subcommand: 'init'
           tf_actions_working_dir: ${{ env.tf_working_dir }}
           tf_actions_comment: true
@@ -40,7 +41,7 @@ jobs:
         with:
           tf_actions_version: ${{ env.tf_version }}
           tg_actions_version: ${{ env.tg_version }}
-          tf_actions_binary: 'terraform'
+          tf_actions_binary: 'terragrunt run-all'
           tf_actions_subcommand: 'validate'
           tf_actions_working_dir: ${{ env.tf_working_dir }}
           tf_actions_comment: true
@@ -52,6 +53,7 @@ jobs:
         with:
           tf_actions_version: ${{ env.tf_version }}
           tg_actions_version: ${{ env.tg_version }}
+          tf_actions_binary: "terragrunt run-all"
           tf_actions_subcommand: 'plan'
           tf_actions_working_dir: ${{ env.tf_working_dir }}
           tf_actions_comment: true

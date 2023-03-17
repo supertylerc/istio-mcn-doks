@@ -34,8 +34,8 @@ resource "digitalocean_kubernetes_cluster" "k8s" {
     labels     = var.node_labels
   }
   maintenance_policy {
-    start_time  = var.maintenance_policy_start_time
-    day         = lower(var.maintenance_policy_day)
+    start_time = var.maintenance_policy_start_time
+    day        = lower(var.maintenance_policy_day)
   }
 
 }

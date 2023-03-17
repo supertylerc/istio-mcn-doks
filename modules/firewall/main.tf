@@ -1,12 +1,12 @@
 resource "digitalocean_tag" "network_tags" {
   for_each = toset(var.node_tags)
-  name = each.value
+  name     = each.value
 }
 
 resource "digitalocean_firewall" "allow_dns" {
   name = "allow-dns-out"
 
-  tags = [for t in digitalocean_tag.network_tags: t.id]
+  tags = [for t in digitalocean_tag.network_tags : t.id]
 
   outbound_rule {
     protocol              = "udp"
@@ -18,7 +18,7 @@ resource "digitalocean_firewall" "allow_dns" {
 resource "digitalocean_firewall" "allow_http_https" {
   name = "allow-http-and-https-out"
 
-  tags = [for t in digitalocean_tag.network_tags: t.id]
+  tags = [for t in digitalocean_tag.network_tags : t.id]
 
   outbound_rule {
     protocol              = "tcp"

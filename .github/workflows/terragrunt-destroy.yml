@@ -1,4 +1,4 @@
-name: 'Terragrunt Plan'
+name: 'Destroy Infrastructure'
 on:
   schedule:
     - cron: "0 20 * * 1-5"
@@ -38,3 +38,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
           DIGITALOCEAN_TOKEN: ${{ secrets.DIGITALOCEAN_TOKEN }}
+          TF_INPUT: false

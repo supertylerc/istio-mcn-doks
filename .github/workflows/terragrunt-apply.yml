@@ -1,7 +1,7 @@
 name: 'Create Infrastructure'
 on:
   schedule:
-    - cron: "0 12 * * 1-5"
+    - cron: "0 16 * * 1-5"
 env:
   tf_version: 'latest'
   tg_version: 'latest'
